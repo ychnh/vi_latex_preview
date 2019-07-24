@@ -15,4 +15,4 @@ On a per line basis shows the latex output in vim.
 * Plug 'ychnh/vi_latex_preview'
 
 * and bind to use
-  * nnoremap <F2> :call latex#Ltx()<CR>
+  * nnoremap \<F2\> :call latex#Ltx()<CR>
