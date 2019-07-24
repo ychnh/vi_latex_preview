@@ -6,7 +6,9 @@ On a per line basis shows the latex output in vim.
 * :call echo('python3')
 * sympy
 * latex interpreter
-vopen cv
+* opencv
+* A font that support braille
+ * http://www.alanwood.net/unicode/fontsbyrange.html#u2800
 
 # Installation
 * Use your favorite Plugin manger Vim-Plug and add to .vimrc
