@@ -8,6 +8,7 @@ On a per line basis shows the latex output in vim.
 * latex interpreter
 * opencv
 * A font that support braille (Dejavu Sans - works best for me so far)
+  * Ok so we probably want to inject the braile font into the standard terminal font because variable pitch is bad. like really bad.
   * http://www.alanwood.net/unicode/fontsbyrange.html#u2800
 
 # Installation
