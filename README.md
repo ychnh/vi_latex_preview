@@ -7,7 +7,7 @@ On a per line basis shows the latex output in vim.
 * sympy
 * latex interpreter
 * opencv
-* A font that support braille
+* A font that support braille (Dejavu Sans - works best for me so far)
   * http://www.alanwood.net/unicode/fontsbyrange.html#u2800
 
 # Installation
