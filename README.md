@@ -1,4 +1,5 @@
 # vi_latex_preview
+![](s1.png)
 
 On a per line basis shows the latex output in vim.
 # Requirements
