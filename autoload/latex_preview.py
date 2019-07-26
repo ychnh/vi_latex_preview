@@ -143,7 +143,7 @@ def print_latex():
     #latex_eq = get_line_buffer().strip('$')
     line = get_curr_line()
     line = line.replace('$$','$')
-    print(line)
+    #print(line)
 
     ltx_expresions = scan_latex_expression(line)
     _, col = vim.current.window.cursor
