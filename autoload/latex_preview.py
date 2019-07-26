@@ -126,9 +126,41 @@ def print_latex_eq(latex_eq):
     #imshow(latex,  cmap='gray', vmin=0, vmax=255)
     print_latex_to_screen_braile(latex)
 
+def scan_latex_expression(line):
+    # scan a line and return the latex expressions
+    idx_list = [i for i, ltr in enumerate(line) if ltr == '$']
+    ltx_exprss = []
+    N = len(idx_list)//2
+    for i in range(N):
+        a = 2*i
+        b = 2*i+1
+        ltx_exprss.append( [ idx_list[a], idx_list[b] ] )
+    
+    return ltx_exprss
+        
+
 def print_latex():
     #latex_eq = get_line_buffer().strip('$')
-    latex_eq = get_curr_line().strip('$')
-    latex_eq = r'$$'+latex_eq+r'$$'
-    #latex_eq = '\sum{\sqrt{(x_i-y_i)^2}}'
-    print_latex_eq(latex_eq)
+    line = get_curr_line()
+    line = line.replace('$$','$')
+    print(line)
+
+    ltx_expresions = scan_latex_expression(line)
+    _, col = vim.current.window.cursor
+
+    min_dist = 100000000000000
+    closest_expression = None
+
+    for a,b in ltx_expresions:
+        dist = min( abs(a-col), abs(b-col) )
+        if dist < min_dist:
+            min_dist = dist
+            closest_expression = line[a+1:b]
+
+    
+    if closest_expression is None:
+        print('no latex expression found in line')
+    else:
+        latex_eq = r'$$'+closest_expression+r'$$'
+        print(latex_eq)
+        print_latex_eq(latex_eq)

@@ -1,7 +1,8 @@
 # vi_latex_preview
 ![](s1.png)
 
-On a per line basis shows the latex output in vim.
+Scans the latex expression that your cursor is closest to on the current line and displays this as an output.
+
 # Requirements
 * vim python3
   * :call echo('python3')
