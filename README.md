@@ -1,7 +1,12 @@
 # vi_latex_preview
 ![](s1.png)
 
-Scans the latex expression that your cursor is closest to on the current line and displays this as an output.
+* Scans the latex expression that your cursor is closest to on the current line and displays this as an output.
+* Allows declaration of defintions through out the file.
+ * ```$\def\lim#1#2{ \underset{#1 \rightarrow #2}{lim} }$```
+* When evaluating any expression, such as ```$\lim{x}{\infty} f(x) \limm{1}{2}$```, all definitions in the current file will be prefixed to the expression and evaluated.
+ 
+
 
 # Requirements
 * vim python3
