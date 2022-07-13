@@ -106,6 +106,14 @@ import os
 import sys
 import sympy
 def print_latex_eq(latex_eq):
+    
+    def get_defs():
+        lines = vim.eval('getline({}, {})'.format(0, 100))
+        lines = vim.current.buffer
+        return ' '.join( [l[1:-1] for l in lines if l[:5]=='$\def'] )
+    DEFS = get_defs()
+    latex_eq = '$$'+DEFS + ' '+ latex_eq[2:-2] +'$$'
+    
     #sympy.preview(r'$$\int_0^1 e^x\,dx$$', viewer='file', filename='test.png', euler=False)
     #sympy.preview(r'$$1 \in \mathbb{R}^2 2 \in A \in B$$', viewer='file', filename='test.png', euler=False)
     #filepath = '/home/yhong/.vim/bundle/latex_preview/test.png'
