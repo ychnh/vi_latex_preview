@@ -24,6 +24,7 @@
    * Macintosh OS X:  Apple Symbols
    * Unix:  ClearlyU
    * FUTURE:  inject the braile font into the standard terminal font because variable pitch is bad
+   * Use font forge to import braille from Dejavu sans to jetbrains mono
 
 # Installation
 * Use your favorite Plugin manger (Vim-Plug) by adding to .vimrc
