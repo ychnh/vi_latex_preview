@@ -110,7 +110,9 @@ def print_latex_eq(latex_eq):
     def get_defs():
         lines = vim.eval('getline({}, {})'.format(0, 100))
         lines = vim.current.buffer
-        return ' '.join( [l[1:-1] for l in lines if l[:5]=='$\def'] )
+        defs = ' '.join( [l[1:-1] for l in lines if l[:5]=='$\\def'] ) + ' '.join( [l[1:-1] for l in lines if l[5]=='$\\newcommand'])
+        return defs 
+        #return ' '.join( [l[1:-1] for l in lines if l[:5]=='$\def'] )
     DEFS = get_defs()
     latex_eq = '$$'+DEFS + ' '+ latex_eq[2:-2] +'$$'
     
